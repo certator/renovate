@@ -1,33 +1,10 @@
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>renovatebot/.github"],
-  "assignees": ["rarkins", "viceice"],
-  "semanticCommitScope": "deps",
-  "automergeType": "pr",
-  "prCreation": "immediate",
-  "dockerfile": {
-    "semanticCommitType": "build"
-  },
-  "packageRules": [
-    {
-      "matchPackageNames": ["containerbase/node"],
-      "versioning": "node"
+module.exports = {
+    // endpoint: 'https://self-hosted.gitlab/api/v4/',
+    token: 'maybe_token',
+    platform: 'local_hook',
+    onboardingConfig: {
+      extends: ['config:base'],
     },
-    {
-      "matchDepTypes": ["dependencies"],
-      "semanticCommitType": "build"
-    },
-    {
-      "matchPackageNames": ["semantic-release"],
-      "semanticCommitType": "build"
-    },
-    {
-      "matchPackageNames": ["@types/jest"],
-      "groupName": "jest monorepo"
-    },
-    {
-      "matchPaths": ["**/__fixtures__/**"],
-      "enabled": false
-    }
-  ]
-}
+    repositories: ['username/repo', 'orgname/repo'],
+  };
+  

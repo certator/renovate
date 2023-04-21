@@ -1,4 +1,5 @@
 export type PlatformId =
+  | 'local_hook'
   | 'azure'
   | 'codecommit'
   | 'bitbucket'

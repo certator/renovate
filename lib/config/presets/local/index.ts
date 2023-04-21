@@ -1,5 +1,6 @@
 import type { PlatformId } from '../../../constants';
 import { GlobalConfig } from '../../global';
+import * as local_hook from '../local_hook';
 import * as gitea from '../gitea';
 import * as github from '../github';
 import * as gitlab from '../gitlab';
@@ -21,6 +22,7 @@ const resolvers = {
   bitbucket: local,
   'bitbucket-server': local,
   codecommit: null,
+  local_hook,
   gitea,
   github,
   gitlab,
