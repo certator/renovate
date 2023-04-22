@@ -16,6 +16,7 @@ import type {
   RepoResult,
   UpdatePrConfig,
 } from '../types';
+import * as git from '../../../util/git';
 
 export const id = 'local_hook';
 
@@ -24,7 +25,12 @@ const platform: Platform = {
     endpoint,
     token,
   }: PlatformParams): Promise<PlatformResult> {
-    throw new Error("not implemented");
+    // throw new Error("not implemented");
+    const platformConfig: PlatformResult = {
+      endpoint: "local_hook_endpoint_placeholder",
+    };
+    return Promise.resolve(platformConfig);
+  
   },
 
   async getRawFile(
@@ -48,11 +54,23 @@ const platform: Platform = {
     cloneSubmodules,
     gitUrl,
   }: RepoParams): Promise<RepoResult> {
-    throw new Error("not implemented");
-  },
+    // throw new Error(`"initRepo: not implemented; gitUrl: ${gitUrl}" repository: ${repository}`);
+    await git.initRepo({
+      // ...config,
+      url: repository,
+    });
+    
+    const repoConfig: RepoResult = {
+      defaultBranch: "main",
+      isFork: false,
+      repoFingerprint: "todo_random_fingerprint",
+    };
+    return repoConfig;
+    },
 
   async getRepos(): Promise<string[]> {
-    throw new Error("not implemented");
+    // throw new Error("getRepos: not implemented");
+    return ["/Users/kos/dev/3rdparty/local_repo_src"];
   },
 
   async setBranchStatus({
@@ -94,7 +112,7 @@ const platform: Platform = {
     prTitle: title,
     state = 'all',
   }: FindPRConfig): Promise<Pr | null> {
-    throw new Error("not implemented");
+    throw new Error("findPr: not implemented");
   },
 
   async createPr({
