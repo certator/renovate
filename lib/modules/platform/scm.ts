@@ -11,6 +11,7 @@ platformScmImpls.set('codecommit', DefaultGitScm);
 platformScmImpls.set('bitbucket', DefaultGitScm);
 platformScmImpls.set('bitbucket-server', DefaultGitScm);
 platformScmImpls.set('gitea', DefaultGitScm);
+platformScmImpls.set('local_hook', DefaultGitScm);
 platformScmImpls.set('github', GithubScm);
 platformScmImpls.set('gitlab', DefaultGitScm);
 

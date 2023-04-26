@@ -18,6 +18,7 @@ import * as github from './github';
 import * as gitlab from './gitlab';
 import * as internal from './internal';
 import * as local from './local';
+import * as local_hook from './local_hook';
 import * as npm from './npm';
 import type { ParsedPreset, Preset, PresetApi } from './types';
 import {
@@ -35,6 +36,7 @@ const presetSources: Record<string, PresetApi> = {
   gitlab,
   gitea,
   local,
+  local_hook,
   internal,
 };
 
